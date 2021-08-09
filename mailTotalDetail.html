@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/charts.css/dist/charts.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="wrap" class="d-flex flex-column">
+        <header class="border-bottom">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-sm-9  justify-content-around">
+                            <li class="nav-item">
+                                <a href="#" class="text-body">メニュー</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="text-body">メニュー</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="text-body">メニュー</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="text-body">メニュー</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-primary col-sm-3">logout</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container p-3 flex-grow-1">
+            <div class="row">
+                <aside class="col-sm-3 border-end">
+                    <div class="border p-2 mb-3">
+                        <img src="" alt="">
+                    </div>
+                    <p>体操コースメニュー一覧</p>
+                    <p>カテゴリー別<br>
+                        <ul class="nav flex-column ml-2">
+                            <li class="nav-item">
+                                <a href="#" class="text-body">メニュー</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="text-body">メニュー</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="text-body">メニュー</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="text-body">メニュー</a>
+                            </li>
+                        </ul>
+                    </p>
+
+                    <p>
+                        <a href="" class="text-body">トレーナー一覧</a>
+                    </p>
+
+                    <p>
+                        <a href="" class="text-body">生徒一覧</a>
+                    </p>
+
+                    <p>
+                        <a href="" class="text-body">メール配信</a>
+                    </p>
+
+                </aside>
+                <section class="col-sm-9">
+                    <h1 class="border text-center p-2 mb-3">
+                        システム名
+                    </h1>
+                    <form>
+                        <div class="row g-0 border-bottom border-3 mb-3 p-2">
+                            <h2 class="col-sm-8 mb-0">メール配信　集計詳細画面</h2>
+                            <a href="" type="button" class="btn btn-secondary col-sm-4">CSV出力</a>
+                        </div>
+
+                        <table class="charts-css bar hide-data show-labels show-primary-axis show-4-secondary-axes  data-spacing-10 mb-3">
+ 
+                            <caption>トレーナー名　メール配信　月別集計</caption>
+                           
+                            <thead>
+                              <tr class="row g-0">
+                                <th scope="col" class="col-sm-3"> 月度 </th>
+                                <th scope="col" class="col-sm-3"> メール配信数 </th>
+                              </tr>
+                            </thead>
+                           
+                            <tbody>
+                              <tr class="row g-0">
+                                <th scope="row" class="col-sm-3">1月</th>
+                                <td class="col-sm-3" style="--size:0.46;"> 46 </td>
+                              </tr>
+                              <tr class="row g-0">
+                                <th scope="row" class="col-sm-3">2月</th>
+                                <td class="col-sm-3" style="--size:0.27;"> 27 </td>
+                              </tr>
+                              <tr class="row g-0">
+                                <th scope="row" class="col-sm-3">3月</th>
+                                <td class="col-sm-3" style="--size:0.35;"> 35 </td>
+                              </tr>
+                            </tbody>
+                           
+                          </table>
+
+                          <table class="row g-0">
+ 
+                            <caption>トレーナー名　メール配信　月別集計</caption>
+                           
+                            <thead class="border-bottom">
+                              <tr class="row g-0 p-1">
+                                <th scope="col" class="col-sm-3"> 月度 </th>
+                                <th scope="col" class="col-sm-3"> メール配信数 </th>
+                              </tr>
+                            </thead>
+                           
+                            <tbody>
+                              <tr class="row g-0 p-1 border-bottom">
+                                <th scope="row" class="col-sm-3">1月</th>
+                                <td class="col-sm-3" style="--size:0.46;"> 46 </td>
+                              </tr>
+                              <tr class="row g-0 p-1 border-bottom">
+                                <th scope="row" class="col-sm-3">2月</th>
+                                <td class="col-sm-3" style="--size:0.27;"> 27 </td>
+                              </tr>
+                              <tr class="row g-0 p-1 border-bottom">
+                                <th scope="row" class="col-sm-3">3月</th>
+                                <td class="col-sm-3" style="--size:0.35;"> 35 </td>
+                              </tr>
+                            </tbody>
+                           
+                          </table>
+
+                    </form>
+                </section>
+            </div>
+        </main>
+
+
+        <footer id="footer" class="border-top p-2">
+            <div class="container">
+                <div class="d-flex justify-content-around">
+                    <div>会社概要</div>
+                    <div>プライバシーポリシー</div>
+                    <div>Copylite©️</div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+                crossorigin="anonymous">
+            </script>
+            <script>
+                let copyToClipboard = document.querySelectorAll('.copyToClipboard');
+
+                console.log(copyToClipboard);
+
+                copyToClipboard.forEach(function (target) {
+                    target.addEventListener('click', function (event) {
+                        // コピー対象をJavaScript上で変数として定義する
+                        let copyTarget = event.target;
+
+                        console.log(copyTarget.value);
+
+                        // コピー対象のテキストを選択する
+                        copyTarget.select();
+
+                        // 選択しているテキストをクリップボードにコピーする
+                        document.execCommand("Copy");
+
+                        // コピーをお知らせする
+                        alert("コピーできました！ : " + copyTarget.value);
+                    });
+                });
+            </script>
+        </footer>
+    </div>
+</body>
+
+</html>
