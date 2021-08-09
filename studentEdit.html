@@ -87,7 +87,7 @@
                         システム名
                     </h1>
 
-                    <h2 class="border-bottom border-3 p-2 mb-3">トレーナー編集</h2>
+                    <h2 class="border-bottom border-3 p-2 mb-3">生徒情報編集</h2>
                     <form>
                         <div class="row g-0">
                             <div class="mb-3 col-sm-6 p-sm-3">
@@ -113,19 +113,36 @@
                                 <label for="" class="form-label">生年月日</label>
                                 <input type="date" name="name" class="form-control w-100 mb-3">
 
-
-
-                                <label for="" class="form-label">所属</label>
-                                <input type="text" name="name" class="form-control w-100 mb-3">
-
-                                <label for="" class="form-label">カテゴリー名</label>
-                                <input type="text" name="name" class="form-control w-100 mb-3">
-
                                 <label for="" class="form-label">住所</label>
                                 <input type="text" name="name" class="form-control w-100 mb-3">
 
                                 <label for="" class="form-label">連絡先</label>
                                 <input type="text" name="name" class="form-control w-100 mb-3">
+
+                                <label for="" class="form-label">担当トレーナー</label>
+                                <input type="text" name="name" class="form-control w-100 mb-3">
+
+                                <label for="" class="form-label">クラス</label>
+                                <div class="d-flex flex-wrap justify-content-start">
+                                <div class="m-2">
+                                    <input class="form-check-input d-none checkbox-tag" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label border rounded-pill p-2" for="flexCheckDefault">
+                                      Default checkbox
+                                    </label>
+                                  </div>
+                                  <div class="m-2">
+                                    <input class="form-check-input d-none checkbox-tag" type="checkbox" value="" id="flexCheckChecked" checked>
+                                    <label class="form-check-label border rounded-pill p-2" for="flexCheckChecked">
+                                      Checked checkbox
+                                    </label>
+                                  </div>
+                                  <div class="m-2">
+                                    <input class="form-check-input d-none checkbox-tag" type="checkbox" value="" id="flexCheckChecked2" checked>
+                                    <label class="form-check-label border rounded-pill p-2" for="flexCheckChecked2">
+                                      Checked checkbox
+                                    </label>
+                                  </div>
+                                  </div>
                             </div>
 
                             <div class="mb-3 col-sm-6 p-sm-3">
@@ -133,22 +150,9 @@
                                 <label for="" class="form-label">メール</label>
                                 <input type="text" name="name" class="form-control w-100 mb-3">
 
-                                <label for="" class="form-label">パスワード</label>
+                                <label for="" class="form-label">メール（再入力）</label>
                                 <input type="text" name="name" class="form-control w-100 mb-3">
 
-
-
-                                <div class="mb-3">
-                                    <p class="form-label">体操コースメニュー作成権限</p>
-                                    <div class="form-check form-check-inline mb-3">
-                                        <input class="form-check-input" type="radio" name="sex" value="1">
-                                        <label class="form-check-label" for="">登録可</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sex" value="2">
-                                        <label class="form-check-label" for="">登録不可</label>
-                                    </div>
-                                </div>
                                 <div class="mb-3">
                                     <p class="form-label">ユーザーステータス</p>
 
@@ -162,9 +166,10 @@
                                     </div>
                                 </div>
 
-                                <a href="" class="btn btn-secondary w-100" type="button">
-                                    担当生徒一覧
-                                </a>
+                                <label for="" class="col-form-label">備考欄</label>
+                                <div class="col-sm-12">
+                                    <textarea name="" id="" rows="5" class="form-control"></textarea>
+                                </div>
                             </div>
                         </div>
 

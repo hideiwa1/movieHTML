@@ -101,3 +101,62 @@ body {
 .btn-trigger span:nth-of-type(3) {
     bottom: 0;
 }
+
+.form .area-drop {
+    margin-bottom: 15px;
+    width: 100%;
+    min-height: 140px;
+    background: #f6f5f4;
+    color: #ccc;
+    text-align: center;
+    line-height: 100px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.form .input-file {
+    opacity: 0;
+    width: 100%;
+    min-height: 140px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    box-sizing: border-box;
+    /* 必ずz-indexをつけないと登録画像を変更する際にドラッグ＆ドロップできなくなる*/
+}
+
+.form .prev-img {
+    display: block;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    position: relative;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.d-d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form .imgDrop-container {
+    width: 33.333%;
+    float: left;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.form .counter-text {
+    text-align: right;
+}
+
+.checkbox-tag:checked+label {
+    background-color: #0dcaf0;
+}

@@ -86,11 +86,21 @@
                     <h1 class="border text-center p-2 mb-3">
                         システム名
                     </h1>
-                    <div class="nav d-flex justify-content-between mb-3">
-                        <a href="" type="button" class="btn btn-secondary col-sm-3">生徒検索</a>
-                        <a href="" type="button" class="btn btn-secondary col-sm-3">新規生徒作成</a>
-
-                    </div>
+                    <ul class="nav d-flex justify-content-between mb-3">
+                        <input type="text" class="btn btn-white col-sm-3 text-start border" placeholder="動画検索">
+                        <div class="dropdown col-sm-3">
+                            <button class="btn btn-secondary dropdown-toggle w-100" type="button"
+                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                カテゴリ
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <a href="" type="button" class="btn btn-secondary col-sm-3">動画アップロード</a>
+                    </ul>
                     <form>
                         <div class="row g-0 border-bottom border-3 mb-3 p-2">
                             <div class="col-sm-1 d-flex align-items-center">
@@ -102,122 +112,90 @@
                                 全て／カテゴリ
                             </label>
                         </div>
-                        <div class="row g-0">
-                            <div class="mb-3 border-bottom">
-                                <div class="row g-0 align-items-stretch p-2">
-                                    <div class="col-sm-1 d-flex align-items-center">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                        </div>
+                        <div class="mb-3 border-bottom">
+                            <div class="row g-0 align-items-stretch p-2">
+                                <div class="col-sm-1 d-flex align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="">
+
                                     </div>
-                                    <div class="col-sm-3">
-                                        <span>氏名</span>
+                                </div>
+                                <div class="col-sm-3 border">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">
+                                            <small class="text-muted">Last updated 3 mins ago</small>
+                                        </p>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <span>担当トレーナー</span>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span>所属</span>
-                                    </div>
-                                    <a href="" class="btn btn-secondary col-sm-2" type="button">
-                                        詳細
-                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row g-0">
-                            <div class="mb-3 border-bottom">
-                                <div class="row g-0 align-items-stretch p-2">
-                                    <div class="col-sm-1 d-flex align-items-center">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                        </div>
+                        <div class="mb-3 border-bottom">
+                            <div class="row g-0 align-items-stretch p-2">
+                                <div class="col-sm-1 d-flex align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="">
+
                                     </div>
-                                    <div class="col-sm-3">
-                                        <span>氏名</span>
+                                </div>
+                                <div class="col-sm-3 border">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">
+                                            <small class="text-muted">Last updated 3 mins ago</small>
+                                        </p>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <span>担当トレーナー</span>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span>所属</span>
-                                    </div>
-                                    <a href="" class="btn btn-secondary col-sm-2" type="button">
-                                        詳細
-                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row g-0">
-                            <div class="mb-3 border-bottom">
-                                <div class="row g-0 align-items-stretch p-2">
-                                    <div class="col-sm-1 d-flex align-items-center">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                        </div>
+                        <div class="mb-3 border-bottom">
+                            <div class="row g-0 align-items-stretch p-2">
+                                <div class="col-sm-1 d-flex align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="">
+
                                     </div>
-                                    <div class="col-sm-3">
-                                        <span>氏名</span>
+                                </div>
+                                <div class="col-sm-3 border">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">
+                                            <small class="text-muted">Last updated 3 mins ago</small>
+                                        </p>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <span>担当トレーナー</span>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span>所属</span>
-                                    </div>
-                                    <a href="" class="btn btn-secondary col-sm-2" type="button">
-                                        詳細
-                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row g-0">
-                            <div class="mb-3 border-bottom">
-                                <div class="row g-0 align-items-stretch p-2">
-                                    <div class="col-sm-1 d-flex align-items-center">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span>氏名</span>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span>担当トレーナー</span>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span>所属</span>
-                                    </div>
-                                    <a href="" class="btn btn-secondary col-sm-2" type="button">
-                                        詳細
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="mb-3 border-bottom">
+                            <div class="row g-0 align-items-stretch p-2">
+                                <div class="col-sm-1 d-flex align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="">
 
-                        <div class="row g-0">
-                            <div class="mb-3 border-bottom">
-                                <div class="row g-0 align-items-stretch p-2">
-                                    <div class="col-sm-1 d-flex align-items-center">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                        </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <span>氏名</span>
+                                </div>
+                                <div class="col-sm-3 border">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">
+                                            <small class="text-muted">Last updated 3 mins ago</small>
+                                        </p>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <span>担当トレーナー</span>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span>所属</span>
-                                    </div>
-                                    <a href="" class="btn btn-secondary col-sm-2" type="button">
-                                        詳細
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -236,9 +214,55 @@
                             </ul>
                         </nav>
 
-                        <div class="row g-0 justify-content-center mb-3">
-                            <button type="submit" class="btn btn-primary col-sm-6">メールを送信する</button>
+                        <p class="border-bottom border-3 p-2 mb-3">選択済み動画</p>
+
+                        <div class="mb-3 border-bottom">
+                            <div class="row g-0 align-items-stretch p-2">
+                                <div class="col-sm-1 d-flex align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 border">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">
+                                            <small class="text-muted">Last updated 3 mins ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="mb-3 border-bottom">
+                            <div class="row g-0 align-items-stretch p-2">
+                                <div class="col-sm-1 d-flex align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 border">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">
+                                            <small class="text-muted">Last updated 3 mins ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-0 justify-content-center mb-3">
+                            <button type="submit" class="btn btn-primary col-sm-6">コースメニューに追加</button>
+                        </div>
+
                     </form>
                 </section>
             </div>
@@ -282,6 +306,7 @@
                 });
             </script>
         </footer>
+
     </div>
 </body>
 
