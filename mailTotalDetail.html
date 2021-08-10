@@ -90,64 +90,66 @@
                     <form>
                         <div class="row g-0 border-bottom border-3 mb-3 p-2">
                             <h2 class="col-sm-8 mb-0">メール配信　集計詳細画面</h2>
-                            <a href="" type="button" class="btn btn-secondary col-sm-4">CSV出力</a>
+                            <a href="#" type="button" onclick="handleDownload()" download="test.csv" id="download"
+                                class="btn btn-secondary col-sm-4">CSV出力</a>
                         </div>
 
-                        <table class="charts-css bar hide-data show-labels show-primary-axis show-4-secondary-axes  data-spacing-10 mb-3">
- 
-                            <caption>トレーナー名　メール配信　月別集計</caption>
-                           
-                            <thead>
-                              <tr class="row g-0">
-                                <th scope="col" class="col-sm-3"> 月度 </th>
-                                <th scope="col" class="col-sm-3"> メール配信数 </th>
-                              </tr>
-                            </thead>
-                           
-                            <tbody>
-                              <tr class="row g-0">
-                                <th scope="row" class="col-sm-3">1月</th>
-                                <td class="col-sm-3" style="--size:0.46;"> 46 </td>
-                              </tr>
-                              <tr class="row g-0">
-                                <th scope="row" class="col-sm-3">2月</th>
-                                <td class="col-sm-3" style="--size:0.27;"> 27 </td>
-                              </tr>
-                              <tr class="row g-0">
-                                <th scope="row" class="col-sm-3">3月</th>
-                                <td class="col-sm-3" style="--size:0.35;"> 35 </td>
-                              </tr>
-                            </tbody>
-                           
-                          </table>
+                        <table id="table1"
+                            class="charts-css bar hide-data show-labels show-primary-axis show-4-secondary-axes  data-spacing-10 mb-3">
 
-                          <table class="row g-0">
- 
                             <caption>トレーナー名　メール配信　月別集計</caption>
-                           
-                            <thead class="border-bottom">
-                              <tr class="row g-0 p-1">
-                                <th scope="col" class="col-sm-3"> 月度 </th>
-                                <th scope="col" class="col-sm-3"> メール配信数 </th>
-                              </tr>
+
+                            <thead>
+                                <tr class="row g-0">
+                                    <th scope="col" class="col-sm-3"> 月度 </th>
+                                    <th scope="col" class="col-sm-3"> メール配信数 </th>
+                                </tr>
                             </thead>
-                           
+
                             <tbody>
-                              <tr class="row g-0 p-1 border-bottom">
-                                <th scope="row" class="col-sm-3">1月</th>
-                                <td class="col-sm-3" style="--size:0.46;"> 46 </td>
-                              </tr>
-                              <tr class="row g-0 p-1 border-bottom">
-                                <th scope="row" class="col-sm-3">2月</th>
-                                <td class="col-sm-3" style="--size:0.27;"> 27 </td>
-                              </tr>
-                              <tr class="row g-0 p-1 border-bottom">
-                                <th scope="row" class="col-sm-3">3月</th>
-                                <td class="col-sm-3" style="--size:0.35;"> 35 </td>
-                              </tr>
+                                <tr class="row g-0">
+                                    <th scope="row" class="col-sm-3">1月</th>
+                                    <td class="col-sm-3" style="--size:0.46;"> 46 </td>
+                                </tr>
+                                <tr class="row g-0">
+                                    <th scope="row" class="col-sm-3">2月</th>
+                                    <td class="col-sm-3" style="--size:0.27;"> 27 </td>
+                                </tr>
+                                <tr class="row g-0">
+                                    <th scope="row" class="col-sm-3">3月</th>
+                                    <td class="col-sm-3" style="--size:0.35;"> 35 </td>
+                                </tr>
                             </tbody>
-                           
-                          </table>
+
+                        </table>
+
+                        <table class="row g-0">
+
+                            <caption>トレーナー名　メール配信　月別集計</caption>
+
+                            <thead class="border-bottom">
+                                <tr class="row g-0 p-1">
+                                    <th scope="col" class="col-sm-3"> 月度 </th>
+                                    <th scope="col" class="col-sm-3"> メール配信数 </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="row g-0 p-1 border-bottom">
+                                    <th scope="row" class="col-sm-3">1月</th>
+                                    <td class="col-sm-3" style="--size:0.46;"> 46 </td>
+                                </tr>
+                                <tr class="row g-0 p-1 border-bottom">
+                                    <th scope="row" class="col-sm-3">2月</th>
+                                    <td class="col-sm-3" style="--size:0.27;"> 27 </td>
+                                </tr>
+                                <tr class="row g-0 p-1 border-bottom">
+                                    <th scope="row" class="col-sm-3">3月</th>
+                                    <td class="col-sm-3" style="--size:0.35;"> 35 </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
 
                     </form>
                 </section>
@@ -190,6 +192,34 @@
                         alert("コピーできました！ : " + copyTarget.value);
                     });
                 });
+
+                function handleDownload() {
+                    var bom = new Uint8Array([0xEF, 0xBB, 0xBF]); //文字コードをBOM付きUTF-8に指定
+                    var table = document.getElementById('table1'); //id=table1という要素を取得
+                    var data_csv = ""; //ここに文字データとして値を格納していく
+
+                    for (var i = 0; i < table.rows.length; i++) {
+                        for (var j = 0; j < table.rows[i].cells.length; j++) {
+                            data_csv += table.rows[i].cells[j].innerText; //HTML中の表のセル値をdata_csvに格納
+                            if (j == table.rows[i].cells.length - 1) data_csv += "\n"; //行終わりに改行コードを追加
+                            else data_csv += ","; //セル値の区切り文字として,を追加
+                        }
+                    }
+
+                    console.log(data_csv);
+
+                    var blob = new Blob([bom, data_csv], {
+                        "type": "text/csv"
+                    }); //data_csvのデータをcsvとしてダウンロードする関数
+                    if (window.navigator.msSaveBlob) { //IEの場合の処理
+                        window.navigator.msSaveBlob(blob, "test.csv");
+                        //window.navigator.msSaveOrOpenBlob(blob, "test.csv");// msSaveOrOpenBlobの場合はファイルを保存せずに開ける
+                    } else {
+                        document.getElementById("download").href = window.URL.createObjectURL(blob);
+                    }
+
+                    delete data_csv; //data_csvオブジェクトはもういらないので消去してメモリを開放
+                }
             </script>
         </footer>
     </div>
