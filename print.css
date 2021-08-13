@@ -18,3 +18,11 @@
 .col-sm-9 {
     width: 100%;
 }
+
+.js-video-active::before {
+    display: none;
+}
+
+.playIcon::before {
+    display: none;
+}
