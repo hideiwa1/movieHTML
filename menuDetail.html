@@ -90,7 +90,7 @@
                     <h2 class="border-bottom border-3 p-2 mb-3">体操コースメニュー1<a href="menuEdit.html"
                             class="col-sm-2 btn btn-secondary ms-3 d-print-none">編集</a></h2>
                     <div class="mb-3 playIcon d-print-none">
-                        <video src="" class="border w-100">
+                        <video src="11" class="border w-100" id="menuVideo">
                         </video>
                     </div>
                     <p>説明</p>
@@ -99,13 +99,31 @@
                     </p>
                     <!-- <div style="page-break-after: always;"></div> -->
                     <p class="border-bottom">プレイリスト</p>
-                    <div class="mb-3 border-bottom js-now-play">
-                        <div class="row g-0 align-items-stretch p-2">
+                    <div class="mb-3 border-bottom playListCard js-now-play">
+                        <div class="row g-0 align-items-stretch p-2" onClick="plyaThis(0)">
+                            <div class="col-sm-2 d-flex align-items-center">
+                                No.0
+                            </div>
+                            <div class="col-sm-3 border js-video-active">
+                                <video src="0" alt="" class="playListVideo"></video>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="card-body">
+                                    <h5 class="card-title">動画タイトル</h5>
+                                    <p class="card-text">
+                                        <small class="text-muted">詳細</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 border-bottom playListCard">
+                        <div class="row g-0 align-items-stretch p-2" onClick="plyaThis(1)">
                             <div class="col-sm-2 d-flex align-items-center">
                                 No.1
                             </div>
                             <div class="col-sm-3 border js-video-active">
-                                <img src="" alt="">
+                                <video src="1" alt="" class="playListVideo"></video>
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
@@ -118,13 +136,13 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 border-bottom">
-                        <div class="row g-0 align-items-stretch p-2">
+                    <div class="mb-3 border-bottom playListCard">
+                        <div class="row g-0 align-items-stretch p-2" onClick="plyaThis(2)">
                             <div class="col-sm-2 d-flex align-items-center">
                                 No.2
                             </div>
-                            <div class="col-sm-3 border">
-                                <img src="" alt="">
+                            <div class="col-sm-3 border js-video-active">
+                                <video src="2" alt="" class="playListVideo"></video>
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
@@ -137,13 +155,13 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 border-bottom">
+                    <div class="mb-3 border-bottom playListCard">
                         <div class="row g-0 align-items-stretch p-2">
                             <div class="col-sm-2 d-flex align-items-center">
                                 No.3
                             </div>
-                            <div class="col-sm-3 border">
-                                <img src="" alt="">
+                            <div class="col-sm-3 border js-video-active">
+                                <video src="3" alt="" class="playListVideo"></video>
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
@@ -156,13 +174,13 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 border-bottom">
+                    <div class="mb-3 border-bottom playListCard">
                         <div class="row g-0 align-items-stretch p-2">
                             <div class="col-sm-2 d-flex align-items-center">
                                 No.4
                             </div>
-                            <div class="col-sm-3 border">
-                                <img src="" alt="">
+                            <div class="col-sm-3 border js-video-active">
+                                <video src="4" alt="" class="playListVideo"></video>
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
@@ -175,13 +193,13 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 border-bottom">
+                    <div class="mb-3 border-bottom playListCard">
                         <div class="row g-0 align-items-stretch p-2">
                             <div class="col-sm-2 d-flex align-items-center">
                                 No.5
                             </div>
-                            <div class="col-sm-3 border">
-                                <img src="" alt="">
+                            <div class="col-sm-3 border js-video-active">
+                                <video src="5" alt="" class="playListVideo"></video>
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
@@ -235,6 +253,52 @@
                     });
                 });
 
+                let playListVideo = document.querySelectorAll('.playListVideo');
+                let playList = [];
+
+                playListVideo.forEach(function (target) {
+                    let src = target.getAttribute('src');
+                    playList.push(src);
+                });
+
+                let video = document.getElementById('menuVideo');
+                let playListCard = document.querySelectorAll('.playListCard');
+
+                video.onended = function () {
+                    playNext(this.src);
+                };
+
+                function plyaThis(val) {
+                    video.pause();
+                    video.setAttribute('src', playList[val]);
+                    video.play();
+                    for (var i = 0; i < playList.length; i++) {
+
+                        playListCard[i].classList.remove('js-now-play');
+
+                        if (i == val) {
+                            playListCard[i].classList.add('js-now-play');
+                        }
+                    }
+                };
+
+                console.log("src: " + decodeURI(video.src).replace("file:///Users/hidemi1/Desktop/movieHtml/", ""));
+
+                function playNext(src) {
+                    let src = decodeURI(src).replace("file:///Users/hidemi1/Desktop/movieHtml/", "");
+
+                    for (var i = 0; i < playList.length; i++) {
+
+                        if (playList[i] == src) {
+                            if(i == playList - 1){
+                                playThis(1);
+                            }else{
+                                playThis(i + 1);
+                            }
+                            
+                        }
+                    }
+                };
             </script>
         </footer>
 
