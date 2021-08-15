@@ -153,7 +153,7 @@
                         <div class="row g-0 mb-3 p-2">
                             <div class="col-sm-1 d-flex align-items-center">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="">
+                                    <input id="checkAll" class="form-check-input" type="checkbox" value="">
                                 </div>
                             </div>
                             <label class="form-check-label col-sm-4" for="flexCheckDefault">
@@ -165,7 +165,7 @@
                                 <div class="row g-0 align-items-stretch p-2">
                                     <div class="col-sm-1 d-flex align-items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
+                                            <input class="form-check-input checks" type="checkbox" value="">
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -189,7 +189,7 @@
                                 <div class="row g-0 align-items-stretch p-2">
                                     <div class="col-sm-1 d-flex align-items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
+                                            <input class="form-check-input checks" type="checkbox" value="">
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -213,7 +213,7 @@
                                 <div class="row g-0 align-items-stretch p-2">
                                     <div class="col-sm-1 d-flex align-items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
+                                            <input class="form-check-input checks" type="checkbox" value="">
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -237,7 +237,7 @@
                                 <div class="row g-0 align-items-stretch p-2">
                                     <div class="col-sm-1 d-flex align-items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
+                                            <input class="form-check-input checks" type="checkbox" value="">
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -261,7 +261,7 @@
                                 <div class="row g-0 align-items-stretch p-2">
                                     <div class="col-sm-1 d-flex align-items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
+                                            <input class="form-check-input checks" type="checkbox" value="">
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -295,7 +295,7 @@
                         </nav>
 
                         <div class="row g-0 justify-content-center mb-3">
-                            <button type="submit" class="btn btn-primary col-sm-6"><a herf="mail.html">メールを送信する</a></button>
+                            <button type="submit" class="btn btn-primary col-sm-6">メールを送信する</button>
                         </div>
                     </form>
                 </section>
@@ -343,13 +343,24 @@
                     var bom = new Uint8Array([0xEF, 0xBB, 0xBF]); //文字コードをBOM付きUTF-8に指定
                     //var table = document.getElementById('table1'); //id=table1という要素を取得
                     var data_csv = ""; //ここに文字データとして値を格納していく
-                    let table = [
-                        {student: '生徒１', trainer: 'トレーナー１', class: "クラス1・クラス３"},
-                        {student: '生徒２', trainer: 'トレーナー２', class: "クラス2"},
-                        {student: '生徒３', trainer: 'トレーナー３', class: "クラス3・クラス４"},
+                    let table = [{
+                            student: '生徒１',
+                            trainer: 'トレーナー１',
+                            class: "クラス1・クラス３"
+                        },
+                        {
+                            student: '生徒２',
+                            trainer: 'トレーナー２',
+                            class: "クラス2"
+                        },
+                        {
+                            student: '生徒３',
+                            trainer: 'トレーナー３',
+                            class: "クラス3・クラス４"
+                        },
                     ]
                     data_csv += "生徒名,トレーナー名,クラス\n";
-                    table.forEach(function(item){
+                    table.forEach(function (item) {
                         data_csv += item.student + "," + item.trainer + "," + item.class + "\n";
                     });
 
@@ -366,6 +377,44 @@
                     }
 
                     delete data_csv; //data_csvオブジェクトはもういらないので消去してメモリを開放
+                }
+
+                //「全て選択」のチェックボックス
+                let checkAll = document.getElementById("checkAll");
+                //「全て選択」以外のチェックボックス
+                let el = document.getElementsByClassName("checks");
+
+                //全てのチェックボックスをON/OFFする
+                const funcCheckAll = (bool) => {
+                    for (let i = 0; i < el.length; i++) {
+                        el[i].checked = bool;
+                    }
+                };
+                //「checks」のclassを持つ要素のチェック状態で「全て選択」のチェック状態をON/OFFする
+                const funcCheck = () => {
+                    let count = 0;
+                    for (let i = 0; i < el.length; i++) {
+                        if (el[i].checked) {
+                            count += 1;
+                        }
+                    }
+                    if (el.length === count) {
+                        checkAll.checked = true;
+                    } else {
+                        checkAll.checked = false;
+                    }
+                };
+                //「全て選択」のチェックボックスをクリックした時
+                checkAll.addEventListener(
+                    "click",
+                    () => {
+                        funcCheckAll(checkAll.checked);
+                    },
+                    false
+                );
+                //「全て選択」以外のチェックボックスをクリックした時
+                for (let i = 0; i < el.length; i++) {
+                    el[i].addEventListener("click", funcCheck, false);
                 }
             </script>
         </footer>
