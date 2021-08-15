@@ -136,7 +136,7 @@
                             <div class="col-sm-4 btn btn-secondary">動画を選択</div>
                         </div>
 
-                        <div class="mb-3 border-bottom">
+                        <div class="mb-3 border-bottom drag-list" id="list-1"  draggable="true">
                             <div class="row g-0 align-items-stretch p-2">
                                 <div class="col-sm-2 d-flex align-items-center justify-content-between">
                                     <span>1</span>
@@ -169,7 +169,7 @@
                             </div>
                         </div>
 
-                        <div class="mb-3 border-bottom">
+                        <div class="mb-3 border-bottom drag-list" id="list-2"  draggable="true">
                             <div class="row g-0 align-items-stretch p-2">
                                 <div class="col-sm-2 d-flex align-items-center justify-content-between">
                                     <span>2</span>
@@ -202,7 +202,7 @@
                             </div>
                         </div>
 
-                        <div class="mb-3 border-bottom">
+                        <div class="mb-3 border-bottom drag-list" id="list-3"  draggable="true">
                             <div class="row g-0 align-items-stretch p-2">
                                 <div class="col-sm-2 d-flex align-items-center justify-content-between">
                                     <span>3</span>
@@ -280,6 +280,26 @@
                         // コピーをお知らせする
                         alert("コピーできました！ : " + copyTarget.value);
                     });
+                });
+
+                document.querySelectorAll('.drag-list').forEach(elm => {
+                    elm.ondragstart = function () {
+                        event.dataTransfer.setData('text/plain', event.target.id);
+                    };
+                    elm.ondragover = function () {
+                        event.preventDefault();
+                        this.style.borderTop = '2px solid blue';
+                    };
+                    elm.ondragleave = function () {
+                        this.style.borderTop = '';
+                    };
+                    elm.ondrop = function () {
+                        event.preventDefault();
+                        let id = event.dataTransfer.getData('text/plain');
+                        let elm_drag = document.getElementById(id);
+                        this.parentNode.insertBefore(elm_drag, this);
+                        this.style.borderTop = '';
+                    };
                 });
             </script>
         </footer>

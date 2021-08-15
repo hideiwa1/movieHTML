@@ -285,11 +285,11 @@
                 console.log("src: " + decodeURI(video.src).replace("file:///Users/hidemi1/Desktop/movieHtml/", ""));
 
                 function playNext(src) {
-                    let src = decodeURI(src).replace("file:///Users/hidemi1/Desktop/movieHtml/", "");
+                    let nextSrc = decodeURI(src).replace("file:///Users/hidemi1/Desktop/movieHtml/", "");
 
                     for (var i = 0; i < playList.length; i++) {
 
-                        if (playList[i] == src) {
+                        if (playList[i] == nextSrc) {
                             if(i == playList - 1){
                                 playThis(1);
                             }else{

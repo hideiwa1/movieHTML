@@ -88,10 +88,63 @@
                         システム名
                     </h1>
                     <div class="nav d-flex justify-content-between mb-3">
-                        <a href="" type="button" class="btn btn-secondary col-sm-3">トレーナー検索</a>
                         <div class="dropdown col-sm-3">
-                            <button class="btn btn-secondary dropdown-toggle w-100" type="button"
-                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-primary w-100" type="button" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                トレーナー検索
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">トレーナー検索</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="mainform" action="" method="get">
+                                                <label for="" class="form-label">キーワード</label>
+                                                <input type="text" name="keyword" class="form-control w-100 mb-3">
+
+                                                <label for="" class="form-label">所属</label>
+                                                <select class="form-select mb-3" aria-label="Default select example">
+                                                    <option selected>Open this select menu</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+
+                                                <p class="form-label">公開状況</p>
+                                                <div class="form-check form-check-inline mb-3">
+                                                    <input class="form-check-input" type="checkbox" name="open_flg[]"
+                                                        value="1">
+                                                    <label class="form-check-label" for="">参加中</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="open_flg[]"
+                                                        value="2">
+                                                    <label class="form-check-label" for="">退会</label>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                                data-bs-target="#exampleModal">閉じる</button>
+                                            <button type="submit" form="mainform"
+                                                class="btn btn-primary col-sm-4">検索する</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown col-sm-3">
+                            <button class="btn btn-primary dropdown-toggle w-100" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 所属
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -100,10 +153,14 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </div>
-                        <a href="trainerAdd.html" type="button" class="btn btn-secondary col-sm-3">新規トレーナー作成</a>
+                        <a href="trainerAdd.html" type="button" class="btn btn-primary col-sm-3">新規トレーナー作成</a>
 
                     </div>
-                    <h2 class="border-bottom border-3 p-2 mb-3">トレーナー一覧</h2>
+                    <div class="row g-0 border-bottom border-3 mb-3 p-2">
+                        <h2 class="col-sm-8 mb-0">トレーナー一覧</h2>
+                        <a href="#" type="button" onclick="handleDownload()" download="test.csv" id="download"
+                            class="btn btn-secondary col-sm-4">CSV出力</a>
+                    </div>
                     <div class="row g-0">
                         <div class="mb-3 border-bottom">
                             <div class="row g-0 align-items-stretch p-2">
