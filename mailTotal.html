@@ -89,7 +89,8 @@
                     <form>
                         <div class="row g-0 border-bottom border-3 mb-3 p-2">
                             <h2 class="col-sm-8 mb-0">メール配信　集計画面</h2>
-                            <a href="" type="button" class="btn btn-secondary col-sm-4">CSV出力</a>
+                            <a href="#" type="button" onclick="handleDownload()" download="test.csv" id="download"
+                                class="btn btn-secondary col-sm-4">CSV出力</a>
                         </div>
                         <div class="row g-0">
                             <div class="mb-3 border-bottom">
@@ -106,7 +107,7 @@
                                     <div class="col-sm-2">
                                         <span>総配信数</span>
                                     </div>
-                                    <a href="" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
+                                    <a href="mailTotalDetail.html" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
                                         詳細
                                     </a>
                                 </div>
@@ -128,7 +129,7 @@
                                     <div class="col-sm-2">
                                         <span>総配信数</span>
                                     </div>
-                                    <a href="" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
+                                    <a href="mailTotalDetail.html" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
                                         詳細
                                     </a>
                                 </div>
@@ -150,7 +151,7 @@
                                     <div class="col-sm-2">
                                         <span>総配信数</span>
                                     </div>
-                                    <a href="" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
+                                    <a href="mailTotalDetail.html" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
                                         詳細
                                     </a>
                                 </div>
@@ -172,7 +173,7 @@
                                     <div class="col-sm-2">
                                         <span>総配信数</span>
                                     </div>
-                                    <a href="" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
+                                    <a href="mailTotalDetail.html" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
                                         詳細
                                     </a>
                                 </div>
@@ -194,7 +195,7 @@
                                     <div class="col-sm-2">
                                         <span>総配信数</span>
                                     </div>
-                                    <a href="" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
+                                    <a href="mailTotalDetail.html" class="btn btn-secondary  col-sm-2 offset-sm-1" type="button">
                                         詳細
                                     </a>
                                 </div>
@@ -256,6 +257,35 @@
                         alert("コピーできました！ : " + copyTarget.value);
                     });
                 });
+
+                function handleDownload() {
+                    var bom = new Uint8Array([0xEF, 0xBB, 0xBF]); //文字コードをBOM付きUTF-8に指定
+                    //var table = document.getElementById('table1'); //id=table1という要素を取得
+                    var data_csv = ""; //ここに文字データとして値を格納していく
+                    let table = [
+                        {trainer: 'トレーナー１', thisMonth: 120, lastMonth: 104, total: 411},
+                        {trainer: 'トレーナー２', thisMonth: 130, lastMonth: 154, total: 741},
+                        {trainer: 'トレーナー３', thisMonth: 80, lastMonth: 94, total: 623},
+                    ]
+                    data_csv += "トレーナー名,今月,先月,総配信数\n";
+                    table.forEach(function(item){
+                        data_csv += item.trainer + "," + item.thisMonth + "," + item.lastMonth + "," + item.total + "\n";
+                    });
+
+                    console.log(data_csv);
+
+                    var blob = new Blob([bom, data_csv], {
+                        "type": "text/csv"
+                    }); //data_csvのデータをcsvとしてダウンロードする関数
+                    if (window.navigator.msSaveBlob) { //IEの場合の処理
+                        window.navigator.msSaveBlob(blob, "test.csv");
+                        //window.navigator.msSaveOrOpenBlob(blob, "test.csv");// msSaveOrOpenBlobの場合はファイルを保存せずに開ける
+                    } else {
+                        document.getElementById("download").href = window.URL.createObjectURL(blob);
+                    }
+
+                    delete data_csv; //data_csvオブジェクトはもういらないので消去してメモリを開放
+                }
             </script>
         </footer>
     </div>
