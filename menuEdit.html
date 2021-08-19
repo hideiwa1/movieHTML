@@ -14,10 +14,10 @@
 
 <body>
     <div id="wrap" class="d-flex flex-column">
-        <header class="border-bottom">
+        <header class="border-bottom bg-light">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">Navbar</a>
+                    <a class="navbar-brand" href="index.html">システム名</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -25,29 +25,29 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-sm-9  justify-content-around">
-                            <li class="nav-item">
-                                <a href="#" class="text-body">メニュー</a>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-lg-9  justify-content-around">
+                            <li class="nav-item p-3 p-lg-0">
+                                <a href="movieList.html" class="text-body">動画一覧</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="text-body">メニュー</a>
+                            <li class="nav-item p-3 p-lg-0">
+                                <a href="trainerList.html" class="text-body">トレーナー一覧</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="text-body">メニュー</a>
+                            <li class="nav-item p-3 p-lg-0">
+                                <a href="studentList.html" class="text-body">生徒一覧</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="text-body">メニュー</a>
+                            <li class="nav-item p-3 p-lg-0">
+                                <a href="mail.html" class="text-body">メール配信</a>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-primary col-sm-3">logout</button>
+                        <button type="button" class="btn btn-primary col-lg-3">logout</button>
                     </div>
                 </div>
             </nav>
         </header>
 
-        <main class="container p-3 flex-grow-1">
-            <div class="row">
-                <aside class="col-sm-3 border-end">
+        <main class="container-lg flex-grow-1 d-flex">
+            <div class="row flex-grow-1 ">
+                <aside class="col-lg-3 bg-light border-end p-3 d-none d-lg-block">
                     <div class="border p-2 mb-3">
                         <img src="" alt="">
                     </div>
@@ -80,38 +80,46 @@
                     <p>
                         <a href="mail.html" class="text-body">メール配信</a>
                     </p>
-
+                    <p>
+                        <a href="adminAcount.html" class="text-body">管理者アカウント管理</a>
+                    </p>
+                    <p>
+                        <a href="mailTotal.html" class="text-body">メール配信管理</a>
+                    </p>
                 </aside>
-                <section class="col-sm-9">
+                <section class="col-lg-9 p-3">
                     <h1 class="border text-center p-2 mb-3">
                         システム名
                     </h1>
-                    <h2 class="border-bottom border-3 p-2 mb-3">体操コースメニュー　編集画面</h2>
+                    <div class="row g-0 border border-3 align-items-center justify-content-between p-2 mb-3 bg-light">
+                        <h2 class="mb-0">体操コースメニュー<span class="d-inline-block">編集画面</span></h2>
+                    </div>
+
                     <form>
-                        <div class="row g-0　mb-3 p-sm-3">
-                            <label for="" class="col-sm-4 col-form-label">コースメニュー名</label>
-                            <div class="col-sm-8">
+                        <div class="row g-0 mb-3 p-sm-3">
+                            <label for="" class="col-lg-4 col-form-label">コースメニュー名</label>
+                            <div class="col-lg-8">
                                 <input type="text" class="form-control">
                             </div>
                         </div>
 
-                        <div class="row g-0　mb-3 p-sm-3">
-                            <label for="" class="col-sm-4 col-form-label">作成者</label>
-                            <div class="col-sm-8">
+                        <div class="row g-0 mb-3 p-sm-3">
+                            <label for="" class="col-lg-4 col-form-label">作成者</label>
+                            <div class="col-lg-8">
                                 トレーナー１
                             </div>
                         </div>
 
-                        <div class="row g-0　mb-3 p-sm-3">
-                            <label for="" class="col-sm-4 col-form-label">説明</label>
-                            <div class="col-sm-8">
+                        <div class="row g-0 mb-3 p-sm-3">
+                            <label for="" class="col-lg-4 col-form-label">説明</label>
+                            <div class="col-lg-8">
                                 <textarea name="" id="" rows="5" class="form-control"></textarea>
                             </div>
                         </div>
 
-                        <div class="row g-0　mb-3 p-sm-3">
-                            <label for="" class="col-sm-4 col-form-label">公開／非公開</label>
-                            <div class="col-sm-8">
+                        <div class="row g-0 mb-3 p-sm-3">
+                            <label for="" class="col-lg-4 col-form-label">公開／非公開</label>
+                            <div class="col-lg-8">
                                 <select class="form-select" aria-label="Default select example">
                                     <option value="1">公開</option>
                                     <option value="2">非公開</option>
@@ -119,30 +127,30 @@
                             </div>
                         </div>
 
-                        <div class="row g-0 　mb-3 p-sm-3 justify-content-between">
-                            <div class="col-sm-5 mb-3">
+                        <div class="row g-0 mb-3 p-sm-3 justify-content-between">
+                            <div class="col-lg-5 mb-3">
                                 <label for="" class="form-label">公開開始日</label>
                                 <input type="date" name="name" class="form-control w-100">
                             </div>
 
-                            <div class="col-sm-5 mb-3">
+                            <div class="col-lg-5 mb-3">
                                 <label for="" class="form-label">公開終了日</label>
                                 <input type="date" name="name" class="form-control w-100">
                             </div>
                         </div>
 
-                        <div class="row g-0　mb-3 p-sm-3">
-                            <label for="" class="col-sm-4 col-form-label">コースメニュー</label>
-                            <a href="movieSelect.html"  class="col-sm-4 btn btn-secondary d-block">動画を選択</a>
+                        <div class="row g-0 mb-3 p-sm-3">
+                            <label for="" class="col-lg-4 col-form-label">コースメニュー</label>
+                            <a href="movieSelect.html"  class="col-lg-4 btn btn-secondary d-block m-2">動画を選択</a>
                         </div>
 
                         <div class="mb-3 border-bottom drag-list" id="list-1"  draggable="true">
                             <div class="row g-0 align-items-stretch p-2">
-                                <div class="col-sm-2 d-flex align-items-center justify-content-between">
+                                <div class="col-lg-2 d-flex align-items-center justify-content-between">
                                     <span>1</span>
                                     <img src="" alt="" class="border flex-grow-1 m-2 h-100">
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-lg-2">
                                     <div class="card-body">
                                         <h5 class="card-title">動画タイトル</h5>
                                         <p class="card-text">
@@ -150,16 +158,16 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-sm-7 d-flex align-items-center">
+                                <div class="col-lg-7 d-flex align-items-center">
                                     <div class="row g-0 flex-grow-1 text-center justify-content-between">
-                                        <a href="movieEdit.html" class="col-sm-3 btn btn-secondary">編集</a>
+                                        <a href="movieEdit.html" class="col-lg-3 btn btn-secondary m-2">編集</a>
 
-                                        <div class="col-sm-4 btn btn-secondary">公開／非公開</div>
+                                        <div class="col-lg-3 btn btn-secondary m-2">公開／非公開</div>
 
-                                        <div class="col-sm-4 btn btn-secondary fs-6">リストから削除</div>
+                                        <div class="col-lg-4 btn btn-secondary fs-6 m-2">リストから削除</div>
                                     </div>
                                 </div>
-                                <div class="col-sm-1  d-flex align-items-center justify-content-around">
+                                <div class="col-lg-1  d-flex align-items-center justify-content-around d-none d-lg-flex">
                                     <div class="btn-trigger" id="btn01">
                                         <span></span>
                                         <span></span>
@@ -169,13 +177,13 @@
                             </div>
                         </div>
 
-                        <div class="mb-3 border-bottom drag-list" id="list-2"  draggable="true">
+                        <div class="mb-3 border-bottom drag-list" id="list-1"  draggable="true">
                             <div class="row g-0 align-items-stretch p-2">
-                                <div class="col-sm-2 d-flex align-items-center justify-content-between">
-                                    <span>2</span>
+                                <div class="col-lg-2 d-flex align-items-center justify-content-between">
+                                    <span>1</span>
                                     <img src="" alt="" class="border flex-grow-1 m-2 h-100">
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-lg-2">
                                     <div class="card-body">
                                         <h5 class="card-title">動画タイトル</h5>
                                         <p class="card-text">
@@ -183,16 +191,16 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-sm-7 d-flex align-items-center">
+                                <div class="col-lg-7 d-flex align-items-center">
                                     <div class="row g-0 flex-grow-1 text-center justify-content-between">
-                                        <a href="movieEdit.html" class="col-sm-3 btn btn-secondary">編集</a>
+                                        <a href="movieEdit.html" class="col-lg-3 btn btn-secondary m-2">編集</a>
 
-                                        <div class="col-sm-4 btn btn-secondary">公開／非公開</div>
+                                        <div class="col-lg-3 btn btn-secondary m-2">公開／非公開</div>
 
-                                        <div class="col-sm-4 btn btn-secondary fs-6">リストから削除</div>
+                                        <div class="col-lg-4 btn btn-secondary fs-6 m-2">リストから削除</div>
                                     </div>
                                 </div>
-                                <div class="col-sm-1  d-flex align-items-center justify-content-around">
+                                <div class="col-lg-1  d-flex align-items-center justify-content-around d-none d-lg-flex">
                                     <div class="btn-trigger" id="btn01">
                                         <span></span>
                                         <span></span>
@@ -202,13 +210,13 @@
                             </div>
                         </div>
 
-                        <div class="mb-3 border-bottom drag-list" id="list-3"  draggable="true">
+                        <div class="mb-3 border-bottom drag-list" id="list-1"  draggable="true">
                             <div class="row g-0 align-items-stretch p-2">
-                                <div class="col-sm-2 d-flex align-items-center justify-content-between">
-                                    <span>3</span>
+                                <div class="col-lg-2 d-flex align-items-center justify-content-between">
+                                    <span>1</span>
                                     <img src="" alt="" class="border flex-grow-1 m-2 h-100">
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-lg-2">
                                     <div class="card-body">
                                         <h5 class="card-title">動画タイトル</h5>
                                         <p class="card-text">
@@ -216,16 +224,16 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-sm-7 d-flex align-items-center">
+                                <div class="col-lg-7 d-flex align-items-center">
                                     <div class="row g-0 flex-grow-1 text-center justify-content-between">
-                                        <a href="movieEdit.html" class="col-sm-3 btn btn-secondary">編集</a>
+                                        <a href="movieEdit.html" class="col-lg-3 btn btn-secondary m-2">編集</a>
 
-                                        <div class="col-sm-4 btn btn-secondary">公開／非公開</div>
+                                        <div class="col-lg-3 btn btn-secondary m-2">公開／非公開</div>
 
-                                        <div class="col-sm-4 btn btn-secondary fs-6">リストから削除</div>
+                                        <div class="col-lg-4 btn btn-secondary fs-6 m-2">リストから削除</div>
                                     </div>
                                 </div>
-                                <div class="col-sm-1  d-flex align-items-center justify-content-around">
+                                <div class="col-lg-1  d-flex align-items-center justify-content-around d-none d-lg-flex">
                                     <div class="btn-trigger" id="btn01">
                                         <span></span>
                                         <span></span>
@@ -236,8 +244,8 @@
                         </div>
 
                         <div class="row g-0 justify-content-center justify-content-around">
-                            <button type="submit" class="btn btn-secondary col-sm-4">キャンセル</button>
-                            <button type="submit" class="btn btn-primary col-sm-4">作成する</button>
+                            <button type="submit" class="btn btn-secondary col-lg-4 m-3">キャンセル</button>
+                            <button type="submit" class="btn btn-primary col-lg-4 m-3">作成する</button>
                         </div>
                     </form>
 
@@ -246,7 +254,7 @@
         </main>
 
 
-        <footer id="footer" class="border-top p-2">
+        <footer id="footer" class="border-top p-2 bg-dark text-white">
             <div class="container">
                 <div class="d-flex justify-content-around">
                     <div>会社概要</div>

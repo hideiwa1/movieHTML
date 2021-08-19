@@ -14,10 +14,10 @@
 
 <body>
     <div id="wrap" class="d-flex flex-column">
-        <header class="border-bottom">
+        <header class="border-bottom bg-light">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">Navbar</a>
+                    <a class="navbar-brand" href="index.html">システム名</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -25,33 +25,33 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-sm-9  justify-content-around">
-                            <li class="nav-item">
-                                <a href="#" class="text-body">メニュー</a>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-lg-9  justify-content-around">
+                            <li class="nav-item  p-3 p-lg-0">
+                                <a href="movieList.html" class="text-body">動画一覧</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="text-body">メニュー</a>
+                            <li class="nav-item p-3 p-lg-0">
+                                <a href="trainerList.html" class="text-body">トレーナー一覧</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="text-body">メニュー</a>
+                            <li class="nav-item p-3 p-lg-0">
+                                <a href="studentList.html" class="text-body">生徒一覧</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="text-body">メニュー</a>
+                            <li class="nav-item p-3 p-lg-0">
+                                <a href="mail.html" class="text-body">メール配信</a>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-primary col-sm-3">logout</button>
+                        <button type="button" class="btn btn-primary col-lg-3">logout</button>
                     </div>
                 </div>
             </nav>
         </header>
 
-        <main class="container p-3 flex-grow-1">
-            <div class="row">
-                <aside class="col-sm-3 border-end">
+        <main class="container-lg flex-grow-1 d-flex">
+            <div class="row flex-grow-1 ">
+                <aside class="col-lg-3 bg-light border-end p-3 d-none d-lg-block">
                     <div class="border p-2 mb-3">
                         <img src="" alt="">
                     </div>
-                    <p>体操コースメニュー一覧</p>
+                    <p><a href="index.html" class="text-body">体操コースメニュー一覧</a></p>
                     <p>カテゴリー別<br>
                         <ul class="nav flex-column ml-2">
                             <li class="nav-item">
@@ -80,14 +80,21 @@
                     <p>
                         <a href="mail.html" class="text-body">メール配信</a>
                     </p>
+                    <p>
+                        <a href="adminAcount.html" class="text-body">管理者アカウント管理</a>
+                    </p>
+                    <p>
+                        <a href="mailTotal.html" class="text-body">メール配信管理</a>
+                    </p>
+
 
                 </aside>
-                <section class="col-sm-9">
+                <section class="col-lg-9 p-3">
                     <h1 class="border text-center p-2 mb-3">
                         システム名
                     </h1>
                     <ul class="nav d-flex justify-content-between mb-3">
-                        <div class="dropdown col-sm-3">
+                        <div class="dropdown col-lg-3 m-2 flex-grow-1">
                             <button class="btn btn-primary w-100" type="button" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 動画検索
@@ -133,7 +140,7 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                                                 data-bs-target="#exampleModal">閉じる</button>
                                             <button type="submit" form="mainform"
-                                                class="btn btn-primary col-sm-4">検索する</button>
+                                                class="btn btn-primary col-lg-4">検索する</button>
                                         </div>
 
                                     </div>
@@ -141,31 +148,31 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="movieEdit.html" type="button" class="btn btn-primary col-sm-3">動画アップロード</a>
+                        <a href="movieEdit.html" type="button" class="btn btn-primary col-lg-3 m-2 flex-grow-1">動画アップロード</a>
                     </ul>
                     <form>
                         <div class="row g-0 border-bottom border-3 mb-3 p-2">
-                            <div class="col-sm-1 d-flex align-items-center">
+                            <div class="col-lg-1 d-flex align-items-center">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="">
                                 </div>
                             </div>
-                            <label class="form-check-label col-sm-4" for="flexCheckDefault">
+                            <label class="form-check-label col-lg-4" for="flexCheckDefault">
                                 全て／カテゴリ
                             </label>
                         </div>
                         <div class="mb-3 border-bottom">
                             <div class="row g-0 align-items-stretch p-2">
-                                <div class="col-sm-1 d-flex align-items-center">
+                                <div class="col-lg-1 d-flex align-items-center">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="">
 
                                     </div>
                                 </div>
-                                <div class="col-sm-3 border">
+                                <div class="col-lg-3 border">
                                     <img src="" alt="">
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-lg-8">
                                     <div class="card-body">
                                         <h5 class="card-title">動画タイトル</h5>
                                         <p class="card-text">
@@ -178,16 +185,16 @@
 
                         <div class="mb-3 border-bottom">
                             <div class="row g-0 align-items-stretch p-2">
-                                <div class="col-sm-1 d-flex align-items-center">
+                                <div class="col-lg-1 d-flex align-items-center">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="">
 
                                     </div>
                                 </div>
-                                <div class="col-sm-3 border">
+                                <div class="col-lg-3 border">
                                     <img src="" alt="">
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-lg-8">
                                     <div class="card-body">
                                         <h5 class="card-title">動画タイトル</h5>
                                         <p class="card-text">
@@ -200,16 +207,16 @@
 
                         <div class="mb-3 border-bottom">
                             <div class="row g-0 align-items-stretch p-2">
-                                <div class="col-sm-1 d-flex align-items-center">
+                                <div class="col-lg-1 d-flex align-items-center">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="">
 
                                     </div>
                                 </div>
-                                <div class="col-sm-3 border">
+                                <div class="col-lg-3 border">
                                     <img src="" alt="">
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-lg-8">
                                     <div class="card-body">
                                         <h5 class="card-title">動画タイトル</h5>
                                         <p class="card-text">
@@ -222,16 +229,16 @@
 
                         <div class="mb-3 border-bottom">
                             <div class="row g-0 align-items-stretch p-2">
-                                <div class="col-sm-1 d-flex align-items-center">
+                                <div class="col-lg-1 d-flex align-items-center">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="">
 
                                     </div>
                                 </div>
-                                <div class="col-sm-3 border">
+                                <div class="col-lg-3 border">
                                     <img src="" alt="">
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-lg-8">
                                     <div class="card-body">
                                         <h5 class="card-title">動画タイトル</h5>
                                         <p class="card-text">
@@ -260,16 +267,16 @@
 
                         <div class="mb-3 border-bottom">
                             <div class="row g-0 align-items-stretch p-2">
-                                <div class="col-sm-1 d-flex align-items-center">
+                                <div class="col-lg-1 d-flex align-items-center">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="">
 
                                     </div>
                                 </div>
-                                <div class="col-sm-3 border">
+                                <div class="col-lg-3 border">
                                     <img src="" alt="">
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-lg-8">
                                     <div class="card-body">
                                         <h5 class="card-title">動画タイトル</h5>
                                         <p class="card-text">
@@ -282,15 +289,15 @@
 
                         <div class="mb-3 border-bottom">
                             <div class="row g-0 align-items-stretch p-2">
-                                <div class="col-sm-1 d-flex align-items-center">
+                                <div class="col-lg-1 d-flex align-items-center">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="">
                                     </div>
                                 </div>
-                                <div class="col-sm-3 border">
+                                <div class="col-lg-3 border">
                                     <img src="" alt="">
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-lg-8">
                                     <div class="card-body">
                                         <h5 class="card-title">動画タイトル</h5>
                                         <p class="card-text">
@@ -302,7 +309,7 @@
                         </div>
 
                         <div class="row g-0 justify-content-center mb-3">
-                            <button type="submit" class="btn btn-primary col-sm-6">コースメニューに追加</button>
+                            <button type="submit" class="btn btn-primary col-lg-6">コースメニューに追加</button>
                         </div>
 
                     </form>
@@ -311,7 +318,7 @@
         </main>
 
 
-        <footer id="footer" class="border-top p-2">
+        <footer id="footer" class="border-top p-2 bg-dark text-white">
             <div class="container">
                 <div class="d-flex justify-content-around">
                     <div>会社概要</div>
